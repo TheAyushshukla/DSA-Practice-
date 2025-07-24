@@ -46,35 +46,35 @@ using namespace std;
  * };
  */
 
-class NestedIterator {
-    queue<int> flattenQ;
-    void flatten(vector<NestedInteger> &nestedList){
-        for(auto item:nestedList){
-            if(item.isInteger()){
-                flattenQ.push(item.getInteger());
-            }
-            else{
-                flatten(item.getList());
-            }
-        }
-    }
-public:
-    NestedIterator(vector<NestedInteger> &nestedList) {
-        flatten(nestedList);
-    }
+// class NestedIterator {
+//     queue<int> flattenQ;
+//     void flatten(vector<NestedInteger> &nestedList){
+//         for(auto item:nestedList){
+//             if(item.isInteger()){
+//                 flattenQ.push(item.getInteger());
+//             }
+//             else{
+//                 flatten(item.getList());
+//             }
+//         }
+//     }
+// public:
+//     NestedIterator(vector<NestedInteger> &nestedList) {
+//         flatten(nestedList);
+//     }
     
-    int next() {
-        int front=flattenQ.front();
-        flattenQ.pop();
-        return front;
+//     int next() {
+//         int front=flattenQ.front();
+//         flattenQ.pop();
+//         return front;
         
-    }
+//     }
     
-    bool hasNext() {
-        return !flattenQ.empty();
+//     bool hasNext() {
+//         return !flattenQ.empty();
         
-    }
-};
+//     }
+// };
 
 /**
  * Your NestedIterator object will be instantiated and called as such:
